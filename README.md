@@ -1,26 +1,23 @@
 # Tori - Business Management and Appointments System
-### [Full App Demo (Video)](https://youtu.be/GYeKwG4_yJA?si=5IZWk-KVdEfRPLnd) | [Push Notifications Demo (Video)](https://youtu.be/pYbYmigJUpk)
 
 <img src="screenshots/Thumbnail.png" alt="Thumbnail" width="800"/>
 <img src="screenshots/Features.png" alt="Features" width="800"/>
 
-### Software Engineering Course Project
-B.Sc in Computer Science @ Ariel University
-
-## Authors
-- Samuel Lazareanu - [LinkedIn](https://www.linkedin.com/in/samuellazareanu) | [GitHub](https://github.com/SamuraiPolix)
-- Adiel Halevi - [LinkedIn](https://www.linkedin.com/in/adiel-halevi) | [GitHub](https://github.com/adiel098)
-- Roey Shmilovich - [LinkedIn](https://www.linkedin.com/in/roey-shmilo) | [GitHub](https://github.com/RoeYeoR)
+---
 
 ## About the Project
-Search for businesses and book appointments on the same app, all in one place.
-- Developed an advanced search feature for quick appointment booking
-- Led full-cycle development using industry best practices, from initiation to deployment
-- Integrated Firebase, Firestore, Storage, Functions, Messaging
-- Designed UI/UX using Figma and managed project in a team of 3 using Trello
+
+**Tori** enables users to search for businesses and book appointments, all in one place.
+
+- Advanced search features for quick appointment booking
+- Built from initiation to deployment using industry best practices
+- Integration with Firebase (Auth, Firestore, Storage, Functions, Messaging)
+- UI/UX designed using Figma
+- Managed as a team project using industry workflow tools
 
 ## Table of Contents
-- [About](#about-the-project)
+
+- [About the Project](#about-the-project)
 - [Screenshots](#screenshots)
 - [System Requirements](#system-requirements)
 - [Installation](#installation)
@@ -32,11 +29,13 @@ Search for businesses and book appointments on the same app, all in one place.
 - [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
 
+---
+
 ## Screenshots
 
 ### Customer Flow
-Here's the flow of screens from the customer's perspective:
-(They are a bit changed in later versions, but the general idea is the same)
+
+Flow of screens from the customer perspective (general flow shown; some screens may have changed in later versions):
 
 <div align="center">
   <img src="screenshots/customer/Customer2-1.png" alt="Customer Flow Part 1" width="800"/>
@@ -54,7 +53,8 @@ Here's the flow of screens from the customer's perspective:
 - Appointment in SalonDetails
 
 ### Business Flow
-Here's the flow of screens from the business's perspective:
+
+Flow of screens from the business’s perspective:
 
 <div align="center">
   <img src="screenshots/business/Business2-1.png" alt="Business Flow Part 1" width="800"/>
@@ -70,39 +70,46 @@ Here's the flow of screens from the business's perspective:
 - Business Settings
 - Stats Page
 
+---
+
 ## System Requirements
 
-- Node.js v22.11.0 or higher
-- npm v11.1.0 or higher
-- React Native development environment
-- Android Studio (for Android development)
-- Xcode (for iOS development, macOS only)
-- Firebase project setup (Auth, Firestore, Storage, Functions, Messaging)
+- **Node.js** v22.11.0 or higher  
+- **npm** v11.1.0 or higher  
+- **React Native** development environment  
+- **Android Studio** (for Android development)  
+- **Xcode** (for iOS development, macOS only)  
+- **Firebase** project setup (Auth, Firestore, Storage, Functions, Messaging)  
+
+---
 
 ## Installation
 
 1. Clone the repository:
-```bash
-git clone https://github.com/SamuraiPolix/Tori.git
-cd Tori
-```
-
+    ```bash
+    git clone https://github.com/SamuraiPolix/Tori.git
+    cd Tori
+    ```
 2. Install dependencies:
-```bash
-npm install
-```
+    ```bash
+    npm install
+    ```
+
+---
 
 ## Firebase Setup
 
-1. Create a new Firebase project at [Firebase Console](https://console.firebase.google.com)
+1. Create a new project at [Firebase Console](https://console.firebase.google.com)
 2. Add your Android and iOS apps to the Firebase project
-3. Download the configuration files:
-   - `google-services.json` for Android (place in `src/services/`)
-   - `GoogleService-Info.plist` for iOS (place in `src/services/`)
-4. Enable the following Firebase services:
-   - Authentication
-   - Cloud Firestore
-   - Cloud Storage
+3. Download and place the configuration files:
+    - `google-services.json` for Android → place in `src/services/`
+    - `GoogleService-Info.plist` for iOS → place in `src/services/`
+4. Enable these Firebase services:
+    - Authentication
+    - Cloud Firestore
+    - Cloud Storage
+
+---
 
 ## Running the App
 
@@ -126,59 +133,52 @@ npm start
 npm run ios
 ```
 
+---
+
 ## Running Multiple Emulators
 
-To test both business and customer views simultaneously, you can run two emulators at the same time. Here's how:
+To test both business and customer flows at the same time, you can run two emulators simultaneously.
 
-### Starting Multiple Emulators
+### Start Multiple Emulators
 
-You can start multiple emulators either through command line or Android Studio:
-
-#### Using Command Line:
+**Using Command Line:**
 ```bash
-# List available emulators
+# List devices
 emulator -list-avds
-
-# Start the first emulator
+# Start first emulator
 emulator -avd <Emulator_Name_1> &
-
-# Start the second emulator
+# Start second emulator
 emulator -avd <Emulator_Name_2> &
 ```
 
-#### Using Android Studio:
-1. Open Android Studio
-2. Go to Device Manager
-3. Launch or duplicate an existing emulator
-4. Start both emulators
+**Using Android Studio:**
+- Open Device Manager and start or duplicate an emulator.
+- Launch two emulators from there.
 
-### Verify Emulators
-Check that both emulators are running:
+**Verify Running Devices:**
 ```bash
 adb devices
 ```
-
-You should see something like:
+You should see output similar to:
 ```
 List of devices attached
 emulator-5554   device
 emulator-5556   device
 ```
 
-### Running the App on Both Emulators
-Run these commands in separate terminals to start the app on each emulator:
+### Launch the App on Both Emulators
+In separate terminals:
 
 ```bash
-# For the first emulator (e.g., for business view)
+# First instance (e.g., business view)
 npx expo start --port 8082
 
-# For the second emulator (e.g., for customer view)
+# Second instance (e.g., customer view)
 npx expo start --port 8083
 ```
+You can then select each device using the appropriate shortcut or via Expo Go.
 
-Then, press Shift + A to select the emulator on each terminal or open Expo Go on each emulator and you will see the Expo app running
-
-This allows you to test business and customer interactions in real-time.
+---
 
 ## Features
 
@@ -189,6 +189,8 @@ This allows you to test business and customer interactions in real-time.
 - ⚙️ Business Settings
 - 🔔 Push Notifications
 
+---
+
 ## Project Structure
 
 ```
@@ -197,50 +199,58 @@ Tori/
 │   ├── components/      # Reusable components
 │   ├── screens/         # Screen components
 │   ├── services/        # API and service functions
-│   ├── styles/         # Global styles
-│   └── assets/         # Images, fonts, etc.
-├── android/            # Android specific files
-├── ios/               # iOS specific files
-└── package.json       # Project dependencies
+│   ├── styles/          # Global styles
+│   └── assets/          # Images, fonts, etc.
+├── android/             # Android-specific files
+├── ios/                 # iOS-specific files
+└── package.json         # Project dependencies
 ```
 
-## Development
+---
 
-- The app uses React Native for cross-platform mobile development
-- Firebase is used for backend services
-- RTL support is enabled for Hebrew language
-- Follows modern React practices with hooks and functional components
+## Development Notes
+
+- Built with React Native for cross-platform support
+- Firebase is used as the backend (Auth, Firestore, Storage, Functions, Messaging)
+- UI/UX designed for both LTR and RTL (Hebrew)
+- Follows modern React best practices (hooks, functional components)
+
+---
 
 ## Troubleshooting
 
-If you encounter any issues:
+**If issues occur:**
 
-1. Clear Metro bundler cache:
-```bash
-npm start -- --reset-cache
-```
+- Clear Metro Bundler cache:
+    ```bash
+    npm start -- --reset-cache
+    ```
+- Clean and rebuild Android:
+    ```bash
+    cd android
+    ./gradlew clean
+    cd ..
+    npm run android
+    ```
+- Clean and rebuild iOS:
+    ```bash
+    cd ios
+    pod deintegrate
+    pod install
+    cd ..
+    npm run ios
+    ```
 
-2. Clean and rebuild Android:
-```bash
-cd android
-./gradlew clean
-cd ..
-npm run android
-```
-
-3. Clean and rebuild iOS:
-```bash
-cd ios
-pod deintegrate
-pod install
-cd ..
-npm run ios
-```
+---
 
 ## Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to your branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
+---
+
+**For any questions or suggestions, please open an issue on the GitHub repository.**
