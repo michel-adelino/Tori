@@ -1,8 +1,4 @@
 # Tori - Business Management and Appointments System
-
-<img src="screenshots/Thumbnail.png" alt="Thumbnail" width="800"/>
-<img src="screenshots/Features.png" alt="Features" width="800"/>
-
 ---
 
 ## About the Project
